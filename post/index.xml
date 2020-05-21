@@ -5,12 +5,58 @@
     <link>karanpraharaj.github.io/post/</link>
       <atom:link href="karanpraharaj.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     <description>Posts</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Mon, 08 Apr 2019 13:21:02 +0200</lastBuildDate>
     <image>
       <url>/karanpraharaj.github.io/images/icon_huea39b62b05be552e812a7ff5ff526fee_1346_512x512_fill_lanczos_center_2.png</url>
       <title>Posts</title>
       <link>karanpraharaj.github.io/post/</link>
     </image>
+    
+    <item>
+      <title>Attention for Machine Translation</title>
+      <link>karanpraharaj.github.io/post/attention/</link>
+      <pubDate>Mon, 08 Apr 2019 13:21:02 +0200</pubDate>
+      <guid>karanpraharaj.github.io/post/attention/</guid>
+      <description>&lt;p&gt;We are not cerebrally hardwired to process loads of information at once. However, what we &lt;em&gt;are&lt;/em&gt; good at, is focusing on a part of the information we&amp;rsquo;re given to make sense of it.  When asked to translate a sentence from one language to another, you process the sentence by picking up individual words as you go, skewering them together into phrases and then mentally assigning corresponding words/ phrases for each part in the target language. When a written word is presented to you for translation, it kicks off a series of neurocognitive processes in your brain. Your normal language system in the brain reads the word in your native language, but for translation, this usual tendency must be suppressed so the translated meaning can emerge. A specific region of the brain (known as the &amp;ldquo;caudate nucleus&amp;rdquo;) coordinates this activity, much like an orchestral conductor, to produce stunningly complex behaviours. Essentially, the syntactical, phonological, lexical and semantic aspects of the word or sequence of words are encompassed, assimilated and then contextualized to render the said sequence of words into its equivalent in the target language.&lt;/p&gt;
+&lt;p&gt;Translations - be it by human or by machine - are not objective in their character, which is to say that there is no &lt;em&gt;unique&lt;/em&gt; translation for any given sentence. Human translation inherently carries the risk of introducing source-language words, grammar or syntax into the target language rendering. A translation by two humans of a relatively long sentence can rarely ever be the exact same. Despite the variance in the final result, though, what does not change is the broad process by which the translations were arrived at. For any target-language word or phrase that was rendered in the translation, the translator paid attention to some parts of the source sentence more than others.&lt;/p&gt;
+&lt;p&gt;This innate quality of humans had not been given to machine algorithms until 2015, when Bahdanau, Cho and Bengio introduced the &amp;ldquo;attention&amp;rdquo; mechanism. This mechanism was proposed to maximise translation performance by allowing a model to automatically (soft-)search for parts of a source sentence that are relevant to predicting a target word, without having to form these parts as a hard segment explicitly. I concede that this sentence may be hard to digest, but we will make sense of it by breaking it down and paying attention to parts of it one at a time. (Very meta, I know.) The impact of this 2015 paper was profound and it would go on to become the building block for several state-of-the-art models.&lt;/p&gt;
+&lt;img src=&#34;att1.png&#34;/&gt; 
+&lt;h4 id=&#34;why-do-we-need-attention&#34;&gt;Why do we need Attention?&lt;/h4&gt;
+&lt;p&gt;In conventional neural machine translation models, an encoder-decoder combination is used with an encoder and a decoder for each language, or a language-specific encoder applied to each sentence whose outputs are then compared. An encoder RNN reads and encodes a source sentence into a fixed-length vector.  A decoder then spits out a translation based on the vector fed to it from the encoder. The whole encoder–decoder system, which consists of the encoder and the decoder for a language pair, is jointly trained to maximize the probability of a correct translation given a source sentence.&lt;/p&gt;
+&lt;img src=&#34;att2.png&#34; alt=&#34;frog&#34;/&gt; 
+&lt;h5 id=&#34;the-bottleneck&#34;&gt;The Bottleneck&lt;/h5&gt;
+&lt;p&gt;A problem with this architecture is its over-reliance on one fixed-length vector to encompass all the necessary information and be a good quality representation of the source sentence. This pressure on the fixed-vector vector to compress and capture all the information is a bottleneck and it makes it difficult for the encoder neural network to perform well on long sentences. It has been shown earlier that the performance of a basic encoder–decoder deteriorates rapidly as the length of an input sentence increases.&lt;/p&gt;
+&lt;p&gt; &lt;/p&gt;
+&lt;h4 id=&#34;core-idea&#34;&gt;Core Idea&lt;/h4&gt;
+&lt;p&gt;In order to address the issue, Bahdanau et al. introduced an extension to the encoder-decoder model which learns to align and translate jointly. The new architecture deploys a bidirectional-RNN as an encoder and a decoder that will be able to focus on all hidden states instead of just the final hidden state. What this modification does, is afford the decoder a flexibility in decision-making and therefore identify the parts of the source sentence that may be more relevant for the prediction of the next word in the target sentence. This is the intuition of the attention mechanism, and it leads us now to the mathematics that goes into making this happen.&lt;/p&gt;
+&lt;p&gt;In the basic encoder-decoder RNN framework, the decoder is trained to predict the next word $y_t$ , given the context vector $c$ and all the words that have been predicted in previous time steps {$y_1$,…,$y_{t^{&#39;}-1}$,$c$}&lt;/p&gt;
+&lt;p&gt;In the new model architecture however, the probability is conditioned on a distinct context vector $c_i$ for each target word $y_t$.&lt;/p&gt;
+&lt;p&gt;The probability over translation $y$ is defined as :
+$$p(\textbf{y}) = \prod_{t=1}^{T} p(y_t|{y_1,&amp;hellip;,y_{t-1}},c_i)\tag{1}$$
+where $\textbf{y}$ is the output (predicted translation). The condition probability in (1) is defined as :
+$$p(y_i| {y_1,&amp;hellip;,y_{t-1}}, \textbf{x})) = g(y_{i-1},s_i,c_i) \tag{2}$$&lt;/p&gt;
+&lt;p&gt;where $\textbf{x}$ is the source sentence and $s_i$ is an RNN hidden state for timestep $i$ determined by $s_i = f(s_{i-1},y_{i-1},c_i)$ .&lt;/p&gt;
+&lt;p&gt;The source sentence is mapped by the encoder to a sequence of annotations, $h_1,…h_{T_x}$, whose weighted sum is computed to obtain the context vector $c_i$. Each annotation encapsulates information about the entire input sequence with a strong focus on the parts surround the $i^{th}$ word of the input sequence.&lt;/p&gt;
+&lt;p&gt;The encoder is a bidirectional-RNN, and so the annotations for each word $x_j$ are obtained by concatenating the forward hidden state $\vec{h}_j$ along with the backward one $\overleftarrow{h}_j$ , i.e. $h_j = \bigg[\vec{h_j^T} ;\overleftarrow{h_j^T}\bigg]$. This representation of inputs helps contain important bits of information from words in the neighbourhood of $x_j$.&lt;/p&gt;
+&lt;img src=&#34;att3.png&#34; alt=&#34;frog&#34;/&gt; 
+&lt;p&gt;Now that we have established the idea of annotations, we can proceed to discuss the computation of the context vectors $c_i$. The context vector is computed as the weight sum of annotations :
+$$ c_i = \sum_{j=1}^{T_x}\alpha_{ij}h_{j}\tag{3} $$
+The weight $\alpha$ corresponding to each annotation $h_j$ is calculated by taking  softmax over the attention scores:
+$$ \alpha_{ij} = \frac{exp(e_{ij})}{\sum_{k=1}^{T_x}exp(e_{ik})}, \tag{4} $$
+where
+$$ e_{ij} = a(s_{i-1},h_{j}) $$
+is a scoring model which quantifies how strong the inputs around position $j$ and output at position $i$ align. The alignment model directly computes a soft alignment, which allows the gradient of the cost function to be backpropagated through. This gradient can be used to train the alignment model as well as the whole translation model jointly.&lt;/p&gt;
+&lt;p&gt;Thus, this new approach facilitates the information to be spread across the sequence of annotations, which can be selectively retrieved by the decoder accordingly.&lt;/p&gt;
+&lt;p&gt;By medium of language, we manage to communicate and express ideas over many dimensions of space and time, but one of the characteristics of language expression is the creation of syntactic bonds among words that may not be immediately next to each other in a sentence. This is where attention steps in and aids the interrelationship between the syntaxes of a pair of languages to identify relationships of words with other words that maybe far away in the same sentence — all the while ignoring other words that just do not have a significant bearing on the word we&amp;rsquo;re trying to make a prediction for.&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt; &lt;/p&gt;
+&lt;h2 id=&#34;references&#34;&gt;References&lt;/h2&gt;
+&lt;div style=&#34;text-align: justify&#34;&gt;[1]	Bahdanau, D., Cho, K. &amp; Bengio, Y. &lt;a href = http://arxiv.org/abs/1409.0473&gt;Neural machine translation by jointly learning to align and translate. &lt;/a&gt; In &lt;i&gt;Proc. International Conference on Learning Representations&lt;/i&gt; (2015)&lt;/div&gt;
+&lt;div style=&#34;text-align: justify&#34;&gt;[2]	Cho, Kyunghyun, Aaron Courville, and Yoshua Bengio. &lt;a href = http://arxiv.org/abs/1507.01053&gt;Describing Multimedia Content using Attention-based Encoder–Decoder Networks.&lt;/a&gt;  &amp;nbsp  (2015)&lt;/div&gt;
+&lt;div style=&#34;text-align: justify&#34;&gt;[3]	Sutskever, I. Vinyals, O. &amp; Le. Q. V. &lt;a href =  https://papers.nips.cc/paper/5346-sequence-to-sequence-learning-with-neural-networks.pdf&gt; Sequence to sequence learning with neural networks.&lt;/a&gt; In &lt;i&gt;Proc. Advances in Neural Information Processing Systems.&lt;/i&gt; (2014)&lt;/div&gt;
+&lt;div style=&#34;text-align: justify&#34;&gt;[4]	Chris Olah&#39;s blog post. &lt;a href = https://distill.pub/2016/augmented-rnns/&gt;&#34;Attention and Augmented Recurrent Neural Networks&#34; &lt;/div&gt; 
+</description>
+    </item>
     
   </channel>
 </rss>
