@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Deep Learning | Karan Praharaj</title>
-    <link>karanpraharaj.github.io/tag/deep-learning/</link>
-      <atom:link href="karanpraharaj.github.io/tag/deep-learning/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://karanpraharaj.github.io/tag/deep-learning/</link>
+      <atom:link href="https://karanpraharaj.github.io/tag/deep-learning/index.xml" rel="self" type="application/rss+xml" />
     <description>Deep Learning</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Mon, 08 Apr 2019 13:21:02 +0200</lastBuildDate>
     <image>
-      <url>/karanpraharaj.github.io/images/icon_huea39b62b05be552e812a7ff5ff526fee_1346_512x512_fill_lanczos_center_2.png</url>
+      <url>https://karanpraharaj.github.io/images/icon_huea39b62b05be552e812a7ff5ff526fee_1346_512x512_fill_lanczos_center_2.png</url>
       <title>Deep Learning</title>
-      <link>karanpraharaj.github.io/tag/deep-learning/</link>
+      <link>https://karanpraharaj.github.io/tag/deep-learning/</link>
     </image>
     
     <item>
       <title>Attention for Machine Translation</title>
-      <link>karanpraharaj.github.io/post/attention/</link>
+      <link>https://karanpraharaj.github.io/post/attention/</link>
       <pubDate>Mon, 08 Apr 2019 13:21:02 +0200</pubDate>
-      <guid>karanpraharaj.github.io/post/attention/</guid>
+      <guid>https://karanpraharaj.github.io/post/attention/</guid>
       <description>&lt;p&gt;We are not cerebrally hardwired to process loads of information at once. However, what we &lt;em&gt;are&lt;/em&gt; good at, is focusing on a part of the information we&amp;rsquo;re given to make sense of it.  When asked to translate a sentence from one language to another, you process the sentence by picking up individual words as you go, skewering them together into phrases and then mentally assigning corresponding words/ phrases for each part in the target language. When a written word is presented to you for translation, it kicks off a series of neurocognitive processes in your brain. Your normal language system in the brain reads the word in your native language, but for translation, this usual tendency must be suppressed so the translated meaning can emerge. A specific region of the brain (known as the &amp;ldquo;caudate nucleus&amp;rdquo;) coordinates this activity, much like an orchestral conductor, to produce stunningly complex behaviours. Essentially, the syntactical, phonological, lexical and semantic aspects of the word or sequence of words are encompassed, assimilated and then contextualized to render the said sequence of words into its equivalent in the target language.&lt;/p&gt;
 &lt;p&gt;Translations - be it by human or by machine - are not objective in their character, which is to say that there is no &lt;em&gt;unique&lt;/em&gt; translation for any given sentence. Human translation inherently carries the risk of introducing source-language words, grammar or syntax into the target language rendering. A translation by two humans of a relatively long sentence can rarely ever be the exact same. Despite the variance in the final result, though, what does not change is the broad process by which the translations were arrived at. For any target-language word or phrase that was rendered in the translation, the translator paid attention to some parts of the source sentence more than others.&lt;/p&gt;
 &lt;p&gt;This innate quality of humans had not been given to machine algorithms until 2015, when Bahdanau, Cho and Bengio introduced the &amp;ldquo;attention&amp;rdquo; mechanism. This mechanism was proposed to maximise translation performance by allowing a model to automatically (soft-)search for parts of a source sentence that are relevant to predicting a target word, without having to form these parts as a hard segment explicitly. I concede that this sentence may be hard to digest, but we will make sense of it by breaking it down and paying attention to parts of it one at a time. (Very meta, I know.) The impact of this 2015 paper was profound and it would go on to become the building block for several state-of-the-art models.&lt;/p&gt;
