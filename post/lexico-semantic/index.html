@@ -27,7 +27,8 @@
   
     
   
-  <meta name="description" content="When I tell you that the &ldquo;teddy bear factory has&rdquo;">
+  <meta name="description" content="When I tell you &ldquo;this teddy bear is fluffy&rdquo;,
+Understanding human language is a difficult problem for computers. Unlike you and me, computers do not have the privilege of human language training the way we do.">
 
   
   <link rel="alternate" hreflang="en-us" href="https://karanpraharaj.github.io/post/lexico-semantic/">
@@ -240,7 +241,8 @@
   <meta property="og:site_name" content="Karan Praharaj">
   <meta property="og:url" content="https://karanpraharaj.github.io/post/lexico-semantic/">
   <meta property="og:title" content="Identification Of Lexico-semantic Word Relations - A Beginner&#39;s Guide | Karan Praharaj">
-  <meta property="og:description" content="When I tell you that the &ldquo;teddy bear factory has&rdquo;"><meta property="og:image" content="https://karanpraharaj.github.io/img/sharer.png">
+  <meta property="og:description" content="When I tell you &ldquo;this teddy bear is fluffy&rdquo;,
+Understanding human language is a difficult problem for computers. Unlike you and me, computers do not have the privilege of human language training the way we do."><meta property="og:image" content="https://karanpraharaj.github.io/img/sharer.png">
   <meta property="twitter:image" content="https://karanpraharaj.github.io/img/sharer.png"><meta property="og:locale" content="en-us">
   
     
@@ -277,6 +279,11 @@
   "datePublished": "2020-02-22T19:07:15+05:30",
   "dateModified": "2020-02-22T19:07:15+05:30",
   
+  "author": {
+    "@type": "Person",
+    "name": "Karan Praharaj"
+  },
+  
   "publisher": {
     "@type": "Organization",
     "name": "Karan Praharaj",
@@ -285,7 +292,7 @@
       "url": "https://karanpraharaj.github.io/images/icon_huea39b62b05be552e812a7ff5ff526fee_1346_192x192_fill_lanczos_center_2.png"
     }
   },
-  "description": "When I tell you that the \u0026ldquo;teddy bear factory has\u0026rdquo;"
+  "description": "When I tell you \u0026ldquo;this teddy bear is fluffy\u0026rdquo;,\nUnderstanding human language is a difficult problem for computers. Unlike you and me, computers do not have the privilege of human language training the way we do."
 }
 </script>
 
@@ -589,7 +596,7 @@
     
 
   
-  <span><a href="/author/">admin</a></span>
+  <span><a href="/author/">Karan Praharaj</a></span>
   </div>
   
   
@@ -609,7 +616,7 @@
   
   <span class="middot-divider"></span>
   <span class="article-reading-time">
-    1 min read
+    5 min read
   </span>
   
 
@@ -645,7 +652,23 @@
   <div class="article-container">
 
     <div class="article-style">
-      <p>When I tell you that the &ldquo;teddy bear factory has&rdquo;</p>
+      <p>When I tell you &ldquo;this teddy bear is fluffy&rdquo;,</p>
+<p>Understanding human language is a difficult problem for computers. Unlike you and me, computers do not have the privilege of human language training the way we do. Even programming languages aren&rsquo;t directly interpreted by them - they are first converted to low-level machine language. True <em>machine code</em> is a stream of raw, usually binary (1s and 0s), data.</p>
+<p>While humans acquire the ability to parse, process, infer and communicate &ndash; all of which we are doing right now, by way of this essay &ndash; for the computer, any word picked out from a human language is unintelligible gibberish until it is adequately trained to understand the language.</p>
+<p>This task of teaching and empowering machines to understand language just as we do, is called Natural Language Processing or NLP. NLP is a branch of artificial intelligence and it is an umbrella itself for many other subproblems. Daily examples of such problems are search, speech recognition, translation, summarization, question-answering etc. But all of this begs the question - if computers can understand nothing but 1s and 0s, how can computers make sense of the complexities of human language?</p>
+<p>Consider a space where all words in the English language are populated based on their semantic character. This imaginary space is such that words sharing similar share similar spacial properties. For instance, the words &ldquo;cat&rdquo; and &ldquo;dog&rdquo; would be in close vicinity with each other because the idea of a cat is very similar to the idea of a dog. Both are bipedal, domestic species that make for cute pets. For words that are not similar in meaning but represent the same concept, the positions of the words relative to each other encapsulate the relationship. In the semantic space, the relative position of &ldquo;king&rdquo; to the position of &ldquo;queen&rdquo; would be similar to the difference in relative positions between &ldquo;man&rdquo; and &ldquo;woman&rdquo; or &ldquo;boy&rdquo; and &ldquo;girl&rdquo;, because the defining concept that separates the words is the same &ndash; gender.</p>
+<p>Since words in their purest form cannot be interpreted by computers, we dumb them down by mapping the concepts and ideas that are inherent to the words into a representative set of numbers for each word. These sets of numbers are generated or &ldquo;learned&rdquo; algebraically by &ldquo;neural networks&rdquo; (a type of algorithm) and are called &ldquo;word vectors&rdquo;. These word vectors bear the ability to capture information about semantic relationships and syntactic structures across collections of words. Approaches to generating word vectors build on Firth&rsquo;s (1957) <em>distributional hypothesis</em> which states:</p>
+<blockquote>
+<p>&ldquo;You shall know a word by the company it keeps.&rdquo;</p>
+</blockquote>
+<p>Put differently, <strong>words that share similar contexts tend to have similar meanings</strong>.</p>
+<p>We will not delve into the mathematical details of how neural networks learn word embeddings, but now you know the underlying idea that drives the mathematics.</p>
+<p>My current research work is focused on a problem called lexical relation resolution. A lexical relation is a culturally recognized pattern of association that exists between lexical items (a word, a part of a word, or a chain of words) in a language. For example, the lexical relation between &ldquo;open&rdquo; and &ldquo;close&rdquo; is that of antonymy, whereas &ldquo;close&rdquo; and &ldquo;shut&rdquo; are connected by a synonymy relationship. Other asymmetric lexico-semantic relations include co-hyponymy (e.g. phone ←→ monitor), hypernymy (e.g. phone → speakerphone) or meronymy (e.g. phone → mouthpiece), etc</p>
+<p>Recognizing the exact nature of the semantic relation holding between a given pair of words is crucial and forms the basis for all the other NLP applications (question-answering, summarization, speech recognition etc.) that I mentioned above.</p>
+<p>Several methods have been proposed in the past to discriminate between multiple semantic relations that hold between a pair of words. But, this continues to remain a difficult task, especially when it comes to distinguishing between certain relations. (e.g synonymy and hyperonymy).</p>
+<p>To solve this problem, our work proposes to investigate the introduction of related words in the neighbourhood of a particular word and gauge the effect it has on the prediction accuracy of word relations. Our original hypothesis was that if each word is augmented by the word vectors of a fixed number of neighbouring words (or &ldquo;patches&rdquo;), improved performance might be attained.</p>
+<p>However, our initial findings showed that the direct introduction of neighbour words did not lead to improvements. We figured that this was mainly due to a loss of concept-centrality that took place as a result of the change in strategy. If word relations are to be assessed by juxtapositioning two patches instead of two words, the required focus on the original word may be diluted.</p>
+<p>The next logical step was to somehow weigh the word vectors based on their centrality to the concept. To do this, we introduced an <strong>attention mechanism</strong> based on the PageRank algorithm (which is one of the algorithms used by Google for their web search. PageRank was developed to measure the importance of website pages). We use it to assign a weight of centrality to each of the word neighbours in the patch. The more a word is central in the patch, the higher the score it receives. These scores are then to be used as attention weights to the corresponding word vector representations of the neighbours. The objective of this mechanism is to improve the predictive ability of our system based on the importance score of each word embedding in the patch. We found that when deployed in combination with the correct architecture, attention-adjusted patches gave a significant boost to previous results.</p>
 
     </div>
 
@@ -770,145 +793,6 @@
 
 
 
-  
-    
-    
-    
-      
-    
-    
-    
-    <div class="media author-card content-widget-hr">
-      
-        
-        <img class="avatar mr-3 avatar-circle" src="/author/avatar_hu75b7b8b9f5f5b266d7468c87fd42e934_220065_270x270_fill_q90_lanczos_center.jpg" alt="">
-      
-
-      <div class="media-body">
-        <h5 class="card-title"><a href="https://karanpraharaj.github.io/"></a></h5>
-        <h6 class="card-subtitle">Student</h6>
-        <p class="card-text">Visiting research assistant at the GREYC Lab at the University of Normandy in France.</p>
-        <ul class="network-icon" aria-hidden="true">
-  
-    
-    
-    
-      
-    
-    
-    
-    
-    
-    <li>
-      <a href="mailto:karanpraharaj@hotmail.com" >
-        <i class="fas fa-envelope"></i>
-      </a>
-    </li>
-  
-    
-    
-    
-      
-    
-    
-    
-    
-    
-      
-    
-    <li>
-      <a href="https://twitter.com/IntrepidIndian" target="_blank" rel="noopener">
-        <i class="fab fa-twitter"></i>
-      </a>
-    </li>
-  
-    
-    
-    
-      
-    
-    
-    
-    
-    
-      
-    
-    <li>
-      <a href="https://instagram.com/karanpraharaj" target="_blank" rel="noopener">
-        <i class="fab fa-instagram"></i>
-      </a>
-    </li>
-  
-    
-    
-    
-      
-    
-    
-    
-    
-    
-      
-    
-    <li>
-      <a href="https://github.com/karanpraharaj" target="_blank" rel="noopener">
-        <i class="fab fa-github"></i>
-      </a>
-    </li>
-  
-    
-    
-    
-      
-    
-    
-    
-    
-    
-      
-    
-    <li>
-      <a href="https://www.linkedin.com/in/karan-praharaj-85142a21/" target="_blank" rel="noopener">
-        <i class="fab fa-linkedin-in"></i>
-      </a>
-    </li>
-  
-    
-    
-    
-      
-    
-    
-    
-    
-    
-      
-    
-    <li>
-      <a href="https://open.spotify.com/user/kp863?si=ZOS1PjeTQv6hEE0KB42fRA" target="_blank" rel="noopener">
-        <i class="fab fa-spotify"></i>
-      </a>
-    </li>
-  
-    
-    
-    
-    
-    
-    
-    
-      
-    
-    <li>
-      <a href="https://scholar.google.com/citations?user=i73wcptREbUC&amp;hl=en&amp;oi=ao" target="_blank" rel="noopener">
-        <i class="ai ai-google-scholar"></i>
-      </a>
-    </li>
-  
-</ul>
-
-      </div>
-    </div>
   
 
 
