@@ -5,7 +5,7 @@
     <link>https://karanpraharaj.github.io/tag/word-similarity/</link>
       <atom:link href="https://karanpraharaj.github.io/tag/word-similarity/index.xml" rel="self" type="application/rss+xml" />
     <description>Word Similarity</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sat, 22 Feb 2020 19:07:15 +0530</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sun, 24 May 2020 19:07:15 +0530</lastBuildDate>
     <image>
       <url>https://karanpraharaj.github.io/img/sharer.png</url>
       <title>Word Similarity</title>
@@ -13,9 +13,9 @@
     </image>
     
     <item>
-      <title>Identification Of Lexico-semantic Word Relations - A Beginner&#39;s Guide</title>
+      <title>Identification Of Lexico-Semantic Word Relations - A Beginner&#39;s Guide</title>
       <link>https://karanpraharaj.github.io/post/lexico-semantic/</link>
-      <pubDate>Sat, 22 Feb 2020 19:07:15 +0530</pubDate>
+      <pubDate>Sun, 24 May 2020 19:07:15 +0530</pubDate>
       <guid>https://karanpraharaj.github.io/post/lexico-semantic/</guid>
       <description>&lt;p&gt;When I tell you &amp;ldquo;this teddy bear is fluffy&amp;rdquo;,&lt;/p&gt;
 &lt;p&gt;Understanding human language is a difficult problem for computers. Unlike you and me, computers do not have the privilege of human language training the way we do. Even programming languages aren&amp;rsquo;t directly interpreted by them - they are first converted to low-level machine language. True &lt;em&gt;machine code&lt;/em&gt; is a stream of raw, usually binary (1s and 0s), data.&lt;/p&gt;
@@ -33,7 +33,8 @@
 &lt;p&gt;Several methods have been proposed in the past to discriminate between multiple semantic relations that hold between a pair of words. But, this continues to remain a difficult task, especially when it comes to distinguishing between certain relations. (e.g synonymy and hyperonymy).&lt;/p&gt;
 &lt;p&gt;To solve this problem, our work proposes to investigate the introduction of related words in the neighbourhood of a particular word and gauge the effect it has on the prediction accuracy of word relations. Our original hypothesis was that if each word is augmented by the word vectors of a fixed number of neighbouring words (or &amp;ldquo;patches&amp;rdquo;), improved performance might be attained.&lt;/p&gt;
 &lt;p&gt;However, our initial findings showed that the direct introduction of neighbour words did not lead to improvements. We figured that this was mainly due to a loss of concept-centrality that took place as a result of the change in strategy. If word relations are to be assessed by juxtapositioning two patches instead of two words, the required focus on the original word may be diluted.&lt;/p&gt;
-&lt;p&gt;The next logical step was to somehow weigh the word vectors based on their centrality to the concept. To do this, we introduced an &lt;strong&gt;attention mechanism&lt;/strong&gt; based on the PageRank algorithm (which is one of the algorithms used by Google for their web search. PageRank was developed to measure the importance of website pages). We use it to assign a weight of centrality to each of the word neighbours in the patch. The more a word is central in the patch, the higher the score it receives. These scores are then to be used as attention weights to the corresponding word vector representations of the neighbours. The objective of this mechanism is to improve the predictive ability of our system based on the importance score of each word embedding in the patch. We found that when deployed in combination with the correct architecture, attention-adjusted patches gave a significant boost to previous results.&lt;/p&gt;
+&lt;p&gt;The next logical step was to somehow weigh the word vectors based on their centrality to the concept. To do this, we introduced an &lt;strong&gt;attention mechanism&lt;/strong&gt; based on the PageRank algorithm (which is one of the algorithms used by Google for their web search. PageRank was developed to measure the importance of website pages). We use it to assign a weight of centrality to each of the word neighbours in the patch. The more a word is central in the patch, the higher the score it receives. These scores are then to be used as attention weights to the corresponding word vector representations of the neighbours. The objective of this mechanism is to improve the predictive ability of our system based on the importance score of each word vector in the patch. We found that when deployed in combination with the correct architecture, attention-adjusted patches gave a significant boost to previous results. I would have to tread into extremely technical territory to explain the specifics of the architectures, so for now we will spare ourselves those details.&lt;/p&gt;
+&lt;p&gt;As it stands, we believe that&lt;/p&gt;
 </description>
     </item>
     
