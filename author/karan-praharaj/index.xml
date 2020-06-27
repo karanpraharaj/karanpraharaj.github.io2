@@ -5,12 +5,20 @@
     <link>https://karanpraharaj.github.io/author/karan-praharaj/</link>
       <atom:link href="https://karanpraharaj.github.io/author/karan-praharaj/index.xml" rel="self" type="application/rss+xml" />
     <description>Karan Praharaj</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© Karan Praharaj, 2020</copyright><lastBuildDate>Fri, 05 Jun 2020 03:03:14 +0530</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© Karan Praharaj, 2020</copyright><lastBuildDate>Sat, 27 Jun 2020 14:24:23 +0530</lastBuildDate>
     <image>
       <url>https://karanpraharaj.github.io/img/sharer.png</url>
       <title>Karan Praharaj</title>
       <link>https://karanpraharaj.github.io/author/karan-praharaj/</link>
     </image>
+    
+    <item>
+      <title>How Are Algorithms Biased?</title>
+      <link>https://karanpraharaj.github.io/post/ai-fairness/</link>
+      <pubDate>Sat, 27 Jun 2020 14:24:23 +0530</pubDate>
+      <guid>https://karanpraharaj.github.io/post/ai-fairness/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>You Are Building Self-Driving Cars. For Free.</title>

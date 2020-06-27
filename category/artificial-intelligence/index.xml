@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Artificial Intelligence | Karan Praharaj</title>
+    <link>https://karanpraharaj.github.io/category/artificial-intelligence/</link>
+      <atom:link href="https://karanpraharaj.github.io/category/artificial-intelligence/index.xml" rel="self" type="application/rss+xml" />
+    <description>Artificial Intelligence</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© Karan Praharaj, 2020</copyright><lastBuildDate>Sat, 27 Jun 2020 14:24:23 +0530</lastBuildDate>
+    <image>
+      <url>https://karanpraharaj.github.io/img/sharer.png</url>
+      <title>Artificial Intelligence</title>
+      <link>https://karanpraharaj.github.io/category/artificial-intelligence/</link>
+    </image>
+    
+    <item>
+      <title>How Are Algorithms Biased?</title>
+      <link>https://karanpraharaj.github.io/post/ai-fairness/</link>
+      <pubDate>Sat, 27 Jun 2020 14:24:23 +0530</pubDate>
+      <guid>https://karanpraharaj.github.io/post/ai-fairness/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
