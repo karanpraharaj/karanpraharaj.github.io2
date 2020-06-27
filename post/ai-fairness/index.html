@@ -27,7 +27,7 @@
   
     
   
-  <meta name="description" content="Algorithms reinforce human biases and stereotypes and it is dangerous.">
+  <meta name="description" content="Algorithms do what they&#39;re taught. Unfortunately some are inadvertently taught prejudices and unethical biases by societal patterns hidden in the  data.">
 
   
   <link rel="alternate" hreflang="en-us" href="https://karanpraharaj.github.io/post/ai-fairness/">
@@ -240,7 +240,7 @@
   <meta property="og:site_name" content="Karan Praharaj">
   <meta property="og:url" content="https://karanpraharaj.github.io/post/ai-fairness/">
   <meta property="og:title" content="How Are Algorithms Biased? | Karan Praharaj">
-  <meta property="og:description" content="Algorithms reinforce human biases and stereotypes and it is dangerous."><meta property="og:image" content="https://karanpraharaj.github.io/img/sharer.png">
+  <meta property="og:description" content="Algorithms do what they&#39;re taught. Unfortunately some are inadvertently taught prejudices and unethical biases by societal patterns hidden in the  data."><meta property="og:image" content="https://karanpraharaj.github.io/img/sharer.png">
   <meta property="twitter:image" content="https://karanpraharaj.github.io/img/sharer.png"><meta property="og:locale" content="en-us">
   
     
@@ -290,7 +290,7 @@
       "url": "https://karanpraharaj.github.io/images/icon_hu895d971f8f6f82cf5ec71badeaec832f_5513_192x192_fill_lanczos_center_2.png"
     }
   },
-  "description": "Algorithms reinforce human biases and stereotypes and it is dangerous."
+  "description": "Algorithms do what they're taught. Unfortunately some are inadvertently taught prejudices and unethical biases by societal patterns hidden in the  data."
 }
 </script>
 
@@ -533,7 +533,7 @@
   <h1>How Are Algorithms Biased?</h1>
 
   
-  <p class="page-subtitle">Algorithms do what they&rsquo;re taught. Unfortunately some are inadvertently taught prejudices and unethical biases by societal patterns hidden in the  data.</p>
+  <p class="page-subtitle">Algorithms reinforce human biases and stereotypes. This is dangerous.</p>
   
 
   
@@ -570,7 +570,7 @@
   
   <span class="middot-divider"></span>
   <span class="article-reading-time">
-    9 min read
+    8 min read
   </span>
   
 
@@ -620,10 +620,12 @@
 <p>We are flawed creatures. Every single decision we make involves a certain kind of bias. However, algorithms haven&rsquo;t proven to be much better. Ideally, we would want our algorithms to make better-informed decisions devoid of biases so as to ensure better social justice, i.e., equal opportunities for individuals and groups (such as minorities) within society to access resources, have their voices heard, and be represented in society.</p>
 <p>When these algorithms do the job of amplifying racial, social and gender inequality, instead of alleviating it; it becomes necessary to take stock of the ethical ramifications and potential malevolence of the technology.</p>
 <p>This essay was motivated by two flashpoints : the racial inequality discussion that is now raging on worldwide, and the Yann LeCun v/s Timnit Gebru beef on Twitter caused due to a disagreement over a downsampled image of Barack Obama which was depixelated to a picture of a white man by a face upsampling machine learning (ML) model.</p>
-<p><img src="https://pbs.twimg.com/media/EbACRFtUYAAjNya?format=jpg&amp;name=large" alt="Image"></p>
-<p>The (rather explosive) argument was sparked by this tweet by LeCun where he says that the resulting face was that of a white man because of a bias in data that trained the algorithm. Gebru responded sharply that the harms of ML systems cannot be reduced to biased data.</p>
+<p><img src="https://pbs.twimg.com/media/EbACRFtUYAAjNya?format=jpg&amp;name=large" alt="Image">
+The (rather explosive) argument was sparked by this tweet by LeCun where he says that the resulting face was that of a white man because of a bias in data that trained the algorithm. Gebru responded sharply that the harms of ML systems cannot be reduced to biased data.</p>
 <p>Never mind Obama, the model even depixelized a <strong>dog&rsquo;s face</strong> to a caucasian man&rsquo;s. It sure loves the white man.</p>
+<br/>
 <center><blockquote class="twitter-tweet" data-theme="dark"><p lang="en" dir="ltr">This is how that depixelizing algorithm reconstructed my dog, Tank <a href="https://t.co/XHgdNwRmXy">pic.twitter.com/XHgdNwRmXy</a></p>&mdash; Jiahao Chen @ 🏡🗽 (@acidflask) <a href="https://twitter.com/acidflask/status/1274889347356069888?ref_src=twsrc%5Etfw">June 22, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></center>
+<br/>
 <p>The misunderstanding clearly seems to emanate over the interpretation of the word &ldquo;bias&rdquo; - which in any discussion about the social impact of ML/AI seems to get crushed under the burden of its own weight.</p>
 <p>As Sebastian Raschka puts it, &ldquo;the term <strong>bias</strong> in ML is heavily overloaded&rdquo;. It has multiple senses that can all be mistaken for each other and a lot of gaps in communication could be covered by just being a little more precise.</p>
 <p>​	(1) <strong>bias</strong> (as in mathematical <strong>bias</strong> unit)
@@ -631,47 +633,63 @@
 ​	(3) ML <strong>bias</strong> (also known as inductive <strong>bias</strong>, which is dependent on decisions taken to build the model.)
 ​	(4) <strong>bias</strong>-variance decomposition of a loss function<br>
 ​	(5) Dataset <strong>bias</strong> (usually causing 2)</p>
+<br/>
 <center><blockquote class="twitter-tweet" data-theme="dark"><p lang="en" dir="ltr">ML systems are biased when data is biased.<br>This face upsampling system makes everyone look white because the network was pretrained on FlickFaceHQ, which mainly contains white people pics.<br>Train the *exact* same system on a dataset from Senegal, and everyone will look African. <a href="https://t.co/jKbPyWYu4N">https://t.co/jKbPyWYu4N</a></p>&mdash; Yann LeCun (@ylecun) <a href="https://twitter.com/ylecun/status/1274782757907030016?ref_src=twsrc%5Etfw">June 21, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></center>
+<br/>
 <p>LeCun wasn&rsquo;t wrong because in the case of that specific model, training the model on a dataset that contains faces of black people (as opposed to one that contains mainly white faces) would not have given rise to an output as absurd as that. But the upside of the godfather of modern AI getting dragged into a spat (albeit unfairly) has meant that more researchers will now be aware of the implications of their research.</p>
 <p>Learning algorithms have inductive biases going beyond the biases in data too, sure. But if the data has a little bias, it is amplified by these systems, thereby causing high biases to be learnt by the model. Simply put, creating a 100% non-biased dataset is practically impossible. Any dataset picked by humans is cherry-picked and non-exhaustive. Our social cognitive biases result in inadvertent cherry-picking of data. This biased data, when fed to a data-variant model (a model whose decisions are heavily influenced by the data it sees) encodes these societal, racial, gender, cultural and politicial biases and bakes them into the ML model.</p>
 <p>These problems <strong>exacerbate</strong>, once they are applied to products.
 A couple of years ago, Jacky Alciné 
 <a href="https://twitter.com/jackyalcine/status/615329515909156865" target="_blank" rel="noopener">pointed out</a> that the image recognition algorithms in Google Photos were classifying his black friends as “gorillas.” Google apologised for the blunder and assured to resolve the issue. However, instead of coming up with a proper solution, it simply blocked the algorithm from identifying gorillas at all.</p>
-<p>Google said it was “appalled” at the mistake, apologized to Alciné, and promised to fix the problem. But, as a 
-<a href="https://www.wired.com/story/when-it-comes-to-gorillas-google-photos-remains-blind/" target="_blank" rel="noopener">new report from Wired</a> shows, nearly three years on and Google hasn’t really fixed anything. The company has simply blocked its image recognition algorithms from identifying gorillas altogether.</p>
 <p>It might seem surprising that a company of Google&rsquo;s size was unable to come up with a solution to this. But this only goes to show how that training an algorithm to be consistent and fair isn&rsquo;t an easy proposition, not least when it is not trained and tested on a diverse set of categories.</p>
 <center><blockquote class="twitter-tweet" data-theme="dark"><p lang="en" dir="ltr">Facial recognition is the prime example. Amazon&#39;s Rekognition correctly identifies light-skinned males with an accuracy of 99% but the accuracy drops drastically for females, who are identified as men 19% of the time. It mistakes dark-skinned women for men 39% of the time.</p>&mdash; Karan (@IntrepidIndian) <a href="https://twitter.com/IntrepidIndian/status/1136048103008690176?ref_src=twsrc%5Etfw">June 4, 2019</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></center>
-<p>[Another disastrous episode][https://www.npr.org/2020/06/24/882683463/the-computer-got-it-wrong-how-facial-recognition-led-to-a-false-arrest-in-michig] of facial recognition tech getting it terribly wrong came as recently as last week when a faulty facial recognition match led to a Michigan man’s arrest for a crime he did not commit. Recent studies by 
+<br/>
+<p>
+<a href="https://www.npr.org/2020/06/24/882683463/the-computer-got-it-wrong-how-facial-recognition-led-to-a-false-arrest-in-michig" target="_blank" rel="noopener">Another disastrous episode</a> of facial recognition tech getting it terribly wrong came as recently as last week when a faulty facial recognition match led to a Michigan man’s arrest for a crime he did not commit. Recent studies by 
 <a href="https://www.nytimes.com/2018/02/09/technology/facial-recognition-race-artificial-intelligence.html" target="_blank" rel="noopener">M.I.T.</a> and the 
 <a href="https://www.nytimes.com/2019/12/19/technology/facial-recognition-bias.html" target="_blank" rel="noopener">National Institute of Standards and Technology</a>, or NIST, found that even though face recognition works well on white men, the results are not good enough for other demographics, in part because of a lack of diversity in the images used to develop the underlying databases.</p>
 <p>Problems of algorithmic bias are not limited to image/video tasks and they manifest themselves in language tasks too.</p>
-<p>[Language is always &ldquo;situated&rdquo;][https://web.stanford.edu/~mjkay/LifeOfLanguage.pdf], i.e., it depends on external references for its understanding and the receiver(s) must be in a position to resolve these references. This therefore means that the text used to train models carries latent information about the author and the situation, albeit to varying degrees.</p>
+<p>
+<a href="https://web.stanford.edu/~mjkay/LifeOfLanguage.pdf" target="_blank" rel="noopener">Language is always &ldquo;situated&rdquo;</a>, i.e., it depends on external references for its understanding and the receiver(s) must be in a position to resolve these references. This therefore means that the text used to train models carries latent information about the author and the situation, albeit to varying degrees.</p>
 <p>Due to the situatedness of language, any language data set inevitably carries with it a demographic bias. For example, speech to text transcription tends to have higher error rates for African Americans, Arabs and South Asians as compared to Americans and Europeans.  Another example in this space is the gender biases in existing word embeddings (which are learned through a neural networks) that show females having a higher association with &ldquo;less-cerebral&rdquo; occupations while males tend to be associated with traditionally &ldquo;more-cerebral&rdquo; or higher paying occupations.</p>
 <center><blockquote class="twitter-tweet" data-conversation="none" data-theme="dark"><p lang="en" dir="ltr">For instance - in existing embeddings, it&#39;s observed that women &amp; men are associated with different professions, with men associated with leaderships roles and professions like doctor, programmer and women closer to professions like receptionist or nurse.</p>&mdash; Karan (@IntrepidIndian) <a href="https://twitter.com/IntrepidIndian/status/1134415294162538497?ref_src=twsrc%5Etfw">May 31, 2019</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></center>
-<p>![image-20200627134204432](/Users/karanpraharaj/Library/Application Support/typora-user-images/image-20200627134204432.png)</p>
+<p><img src = "tablefair.png" alt="fair" /></p>
 <p>While it is easy for ML Researchers to hold their hands up and absolve themselves of all responsibility, they are preparing the foundations of products of a lot of companies that are devoid of AI expertise. These companies, without the knowledge of fine-tuning and tweaking, use pre-trained models put out on the internet by ML researchers (like GloVe, BERT, ResNet, YOLO etc). Deploying these models without explicitly recalibrating them to account for demographic differences can thus lead to issues of exclusion and overgeneralisation of people along the way. The buck stops with the researchers who must own up responsibility for the other side of the coin.</p>
 <p>It is also easy to blame the data and not the algorithm. (It reminds me of the Republican stance on the second amendment debate :  &ldquo;Guns don&rsquo;t kill people, people kill people.&quot;) But what is indisputable is that more than the need to improve the data, it is  the algorithms that need to be more robust and less prone to being biased by the data. In the meantime, de-bias the data.</p>
+<p> </p>
+<h2 id="heading"></h2>
 <p>The guiding question for deployment of algorithms in the real world should always be “would a false answer be worse than no answer?”</p>
-<p>Potential counter-measures to demographic bias can be as simple as downsampling the over-represented group in the training data to even out the distribution.</p>
-<p>.</p>
-<p>&ldquo;Across the country, millions are protesting not just the actions of individual officers, but bias in the systems used to surveil communities and identify people for prosecution.&rdquo;</p>
-<p>&ldquo;Recent studies by 
-<a href="https://www.nytimes.com/2018/02/09/technology/facial-recognition-race-artificial-intelligence.html" target="_blank" rel="noopener">M.I.T.</a> and the 
-<a href="https://www.nytimes.com/2019/12/19/technology/facial-recognition-bias.html" target="_blank" rel="noopener">National Institute of Standards and Technology</a>, or NIST, have found that while the technology works relatively well on white men, the results are less accurate for other demographics, in part because of a lack of diversity in the images used to develop the underlying databases.&rdquo; false positives</p>
-<p>“I 
-<a href="https://www.aclu.org/blog/privacy-technology/surveillance-technologies/florida-using-facial-recognition-convict-people" target="_blank" rel="noopener">strongly</a> 
-<a href="https://nymag.com/intelligencer/2019/11/the-future-of-facial-recognition-in-america.html" target="_blank" rel="noopener">suspect</a> this is not the first case to misidentify someone to arrest them for a crime they didn’t commit. This is just the first time we know about it.”</p>
-<p>&ldquo;falsely identifying African-American and Asian faces 10 times to 100 times more than Caucasian faces.</p>
-<p>“tightens the differences in accuracy between <strong>different demographic cohorts</strong>.”</p>
-<p>&ldquo;Researchers at the Massachusetts Institute of Technology 
-<a href="https://www.nytimes.com/2019/01/24/technology/amazon-facial-technology-study.html" target="_blank" rel="noopener">reported in January</a> that facial recognition software marketed by Amazon <strong>misidentified</strong> darker-skinned women as men 31 percent of the time. Others have shown that algorithms used in facial recognition 
-<a href="https://arxiv.org/pdf/1904.07325.pdf" target="_blank" rel="noopener">return false matches at a higher rate for African-Americans</a> than white people unless <strong>explicitly</strong> <strong>recalibrated</strong> for a black population — in which case their failure rate at finding positive matches for white people climbs. 
-<a href="https://arxiv.org/pdf/1904.07325.pdf" target="_blank" rel="noopener">That study</a>, posted in May by computer scientists at the Florida Institute of Technology and the University of Notre Dame, suggests that a single algorithm cannot be applied to both groups with equal accuracy.&rdquo;</p>
-<p><a href="https://twitter.com/acidflask/status/1274889347356069888">https://twitter.com/acidflask/status/1274889347356069888</a></p>
-<p><a href="https://www.nytimes.com/2020/06/24/technology/facial-recognition-arrest.html?smid=tw-share">https://www.nytimes.com/2020/06/24/technology/facial-recognition-arrest.html?smid=tw-share</a></p>
-<p><a href="https://www.nytimes.com/2019/12/19/technology/facial-recognition-bias.html">https://www.nytimes.com/2019/12/19/technology/facial-recognition-bias.html</a></p>
-<p><a href="https://twitter.com/hardmaru/status/1274521216192151552/photo/1">https://twitter.com/hardmaru/status/1274521216192151552/photo/1</a></p>
-<p><a href="https://web.stanford.edu/~mjkay/LifeOfLanguage.pdf">https://web.stanford.edu/~mjkay/LifeOfLanguage.pdf</a></p>
+<p> </p>
+<h2 id="heading-1"></h2>
+<hr>
+<p> </p>
+<h2 id="heading-2"></h2>
+<h2 id="references">References</h2>
+<p> </p>
+<ol>
+<li>
+<p>
+<a href="[">Facial Recognition Is Accurate, if You’re a White Guy</a><a href="https://www.nytimes.com/2018/02/09/technology/facial-recognition-race-artificial-intelligence.html">https://www.nytimes.com/2018/02/09/technology/facial-recognition-race-artificial-intelligence.html</a>) by Steve Lohr</p>
+</li>
+<li>
+<p>Krishnapriya, KS., Vangara, K., King, M., Albiero, V., Bowyer, K. 
+<a href="https://arxiv.org/pdf/1904.07325.pdf" target="_blank" rel="noopener">Characterizing the Variability in Face Recognition Accuracy Relative to Race</a> in <em>The IEEE Conference on Computer Vision and Pattern Recognition (CVPR) Workshops, June 2019.</em></p>
+</li>
+<li>
+<p>
+<a href="https://web.stanford.edu/~mjkay/LifeOfLanguage.pdf" target="_blank" rel="noopener">Life of Language</a> by Martin Kay, Stanford University</p>
+</li>
+<li>
+<p>
+<a href="https://developers.googleblog.com/2018/04/text-embedding-models-contain-bias.html" target="_blank" rel="noopener">Text Embedding Models Contain Bias. Here&rsquo;s Why That Matters.</a> by Ben Packer, Yoni Halpern, Mario Guajardo-Céspedes &amp; Margaret Mitchell, Google AI</p>
+</li>
+<li>
+<p>Bolukbasi, T., Chang, KW., Zou, J., Saligrama, V., Kalai, A. 
+<a href="http://papers.nips.cc/paper/6228-man-is-to-computer-programmer-as-woman-is-to-homemaker-d" target="_blank" rel="noopener">Man is to Computer Programmer as Woman is to Homemaker? Debiasing Word Embeddings</a> in <em>Advances in Neural Information Processing Systems 29, 2016.</em></p>
+</li>
+</ol>
+<p> </p>
+<h2 id="heading-3"></h2>
 
     </div>
 
