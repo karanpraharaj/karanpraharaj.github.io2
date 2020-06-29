@@ -622,7 +622,7 @@ if (!doNotTrack) {
   
   <span class="middot-divider"></span>
   <span class="article-reading-time">
-    9 min read
+    10 min read
   </span>
   
 
@@ -634,6 +634,10 @@ if (!doNotTrack) {
   
 
   
+  
+  <span class="middot-divider"></span>
+  <span class="article-categories">
+    <i class="fas fa-folder mr-1"></i><a href="/category/computer-science/">Computer Science</a></span>
   
 
 </div>
@@ -670,7 +674,7 @@ if (!doNotTrack) {
 <p>When these algorithms do the job of amplifying racial, social and gender inequality, instead of alleviating it; it becomes necessary to take stock of the ethical ramifications and potential malevolence of the technology.</p>
 <p>This essay was motivated by two flashpoints : the racial inequality discussion that is now raging on worldwide, and Yann LeCun’s altercation with Timnit Gebru on Twitter which was caused due to a disagreement over a downsampled image of Barack Obama (left) that was depixelated to a picture of a white man (right) by a face upsampling machine learning (ML) model.</p>
 <p><img src="https://pbs.twimg.com/media/EbACRFtUYAAjNya?format=jpg&amp;name=large" alt="Image">
-The (rather explosive) argument was sparked by this tweet by LeCun where he says that the resulting face was that of a white man because of a bias in data that trained the algorithm. Gebru responded sharply that the harms of ML systems cannot be reduced to biased data.</p>
+The (rather explosive) argument was sparked by this tweet by LeCun where he says that the resulting face was that of a white man due to a bias in data that trained the model. In simple terms, LeCun said that the results could be improved by increasing the number of black faces that the model sees. Gebru responded sharply that the harms of ML systems cannot be solely reduced to biased data.</p>
 <center><blockquote class="twitter-tweet" data-theme="dark"><p lang="en" dir="ltr">ML systems are biased when data is biased.<br>This face upsampling system makes everyone look white because the network was pretrained on FlickFaceHQ, which mainly contains white people pics.<br>Train the *exact* same system on a dataset from Senegal, and everyone will look African. <a href="https://t.co/jKbPyWYu4N">https://t.co/jKbPyWYu4N</a></p>&mdash; Yann LeCun (@ylecun) <a href="https://twitter.com/ylecun/status/1274782757907030016?ref_src=twsrc%5Etfw">June 21, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></center>
 <br/>
 <p>In most baseline ML algorithms, the model fits better to the attributes or patterns that occur most frequently across various data points. For example, if you were to design an AI recruiting tool to review the résumés of applicants for a software engineering position, you would first need to train it with a dataset of past candidates which contains details like “experience”, “qualifications”, “degree(s) held”, “past projects” etc. For every datapoint, the algorithm of the hiring tool would need a decision or a “label”, so as to “learn” how to make a decision for a given applicant by observing patterns in their résumé.</p>
@@ -700,16 +704,17 @@ The (rather explosive) argument was sparked by this tweet by LeCun where he says
 <p>Problems of algorithmic bias are not limited to image/video tasks and they manifest themselves in language tasks too.</p>
 <p>
 <a href="https://web.stanford.edu/~mjkay/LifeOfLanguage.pdf" target="_blank" rel="noopener">Language is always “situated”</a>, i.e., it depends on external references for its understanding and the receiver(s) must be in a position to resolve these references. This therefore means that the text used to train models carries latent information about the author and the situation, albeit to varying degrees.</p>
-<p>Due to the situatedness of language, any language data set inevitably carries with it a demographic bias. For example, speech to text transcription tends to have higher error rates for African Americans, Arabs and South Asians as compared to Americans and Europeans. Another example in this space is the gender biases in existing word embeddings (which are learned through a neural networks) that show females having a higher association with “less-cerebral” occupations while males tend to be associated with purportedly “more-cerebral” or higher paying occupations.</p>
+<p>Due to the situatedness of language, any language data set inevitably carries with it a demographic bias. For example, some speech to text transcription models tend to have higher error rates for African Americans, Arabs and South Asians as compared to Americans and Europeans. This is because the corpus that the  speech recognition models are trained are dominated by utterances of people from western countries. This causes the system to be good at interpreting European and American accents but subpar at transcribing speech from other parts of the world.</p>
+<p>Another example in this space is the gender biases in existing word embeddings (which are learned through a neural networks) that show females having a higher association with “less-cerebral” occupations while males tend to be associated with purportedly “more-cerebral” or higher paying occupations.</p>
 <center><blockquote class="twitter-tweet" data-conversation="none" data-theme="dark"><p lang="en" dir="ltr">For instance - in existing embeddings, it&#39;s observed that women &amp; men are associated with different professions, with men associated with leaderships roles and professions like doctor, programmer and women closer to professions like receptionist or nurse.</p>&mdash; Karan (@IntrepidIndian) <a href="https://twitter.com/IntrepidIndian/status/1134415294162538497?ref_src=twsrc%5Etfw">May 31, 2019</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></center>
 <p> </p>
 <p>In the table below, we see the gender bias scores associated with various occupations in the 
 <a href="https://www.tensorflow.org/hub/modules/google/universal-sentence-encoder/1" target="_blank" rel="noopener">Universal Sentence Encoder</a> embedding model. The occupations with positive scores are female-biased occupations and ones with negative scores are male-biased occupations.</p>
 <p><img src = "tablefair.png" alt="fair" /></p>
-<p>For ML Researchers it would be easy to punt the blame and absolve themselves of all responsibility, but it is imperative for them to acknowledge that they—knowingly or otherwise—build the base layer of AI products for a lot of companies that are devoid of AI expertise. These companies, without the knowledge of fine-tuning and tweaking models, use pre-trained models, as they are, put out on the internet by ML researchers (like GloVe, BERT, ResNet, YOLO etc).</p>
+<p>For ML Researchers it would be easy to punt the blame and absolve themselves of all responsibility, but it is imperative for them to acknowledge that they—knowingly or otherwise—build the base layer of AI products for a lot of companies that are devoid of AI expertise. These companies, without the knowledge of fine-tuning and tweaking models, use pre-trained models, as they are, put out on the internet by ML researchers (for e.g. - models like GloVe, BERT, ResNet, YOLO etc).</p>
 <p>Deploying these models without explicitly recalibrating them to account for demographic differences can thus lead to issues of exclusion and overgeneralisation of people along the way. The buck stops with the researchers who must own up responsibility for the other side of the coin.</p>
 <p>It is also easy to blame the data and not the algorithm. (It reminds me of the Republican stance on the second amendment debate : “Guns don’t kill people, people kill people.”) Pinning the blame on just the data is irresponsible and akin to saying that the racist child isn&rsquo;t racist because he was taught the racism by his racist father.</p>
-<p>More than we need to improve the data, it is the algorithms that need to be made more robust, less sensitive and less prone to being biased by the data. This needs to be a responsibility for anyone who does research. In the meantime, de-bias the data.</p>
+<p>More than we need to improve the data, it is the algorithms that need to be made more robust, less sensitive and less prone to being biased by data that is skewed. This needs to be a responsibility for anyone who does research. In the meantime, de-bias the data.</p>
 <p>The guiding question for deployment of algorithms in the real world should always be “would a false answer be worse than no answer?”</p>
 <p> </p>
 <hr>
